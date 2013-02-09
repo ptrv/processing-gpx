@@ -21,7 +21,7 @@
 
 package tomc.gpx;
 
-import processing.xml.XMLElement;
+import processing.data.XML;
 
 /** simple GPX waypoint, only understands latitude, longitude, name and type 
     FIXME extend parsing to understand other properties */
@@ -45,8 +45,8 @@ public class GPXWayPoint {
     this.type = type;
   }
 
-  /** parses a GPXWayPoint from the given XMLElement */
-  public GPXWayPoint(XMLElement trkpt) {
+  /** parses a GPXWayPoint from the given XML element */
+  public GPXWayPoint(XML trkpt) {
     this.lat = trkpt.getDouble("lat");
     this.lon = trkpt.getDouble("lon");
     this.name = trkpt.getChild("name").getContent();

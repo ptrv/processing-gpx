@@ -41,7 +41,7 @@ package tomc.gpx;
 
 import processing.core.PApplet;
 import java.util.Vector;
-import processing.xml.XMLElement;
+import processing.data.XML;
 
 /** contains a collection of GPXTrack objects and GPXWayPoint objects */
 public class GPX {
@@ -59,10 +59,10 @@ public class GPX {
   
   public void parse(String url) {  
     try {
-      XMLElement xmldata = new XMLElement(parent, url);
-      XMLElement[] xmlthings = xmldata.getChildren();
+      XML xmldata = parent.loadXML(url);
+      XML[] xmlthings = xmldata.getChildren();
       for (int i = 0; i < xmlthings.length; i++) {
-        XMLElement xmlthing = xmlthings[i];
+        XML xmlthing = xmlthings[i];
         if (xmlthing.getName().equals("trk")) {
           addTrack(new GPXTrack(xmlthing));
         }

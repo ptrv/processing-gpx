@@ -21,14 +21,14 @@
 
 package tomc.gpx;
 
-import processing.xml.XMLElement;
+import processing.data.XML;
 import java.util.Vector;
 
 /** a collection of GPXPoint objects, with type-safe convenience methods for adding/removing/getting points */
 public class GPXTrackSeg extends Vector {
 
-  public GPXTrackSeg(XMLElement trkseg) {
-    XMLElement[] children = trkseg.getChildren("trkpt");
+  public GPXTrackSeg(XML trkseg) {
+    XML[] children = trkseg.getChildren("trkpt");
     for (int i = 0; i < children.length; i++) {
       addPoint(new GPXPoint(children[i]));
     }

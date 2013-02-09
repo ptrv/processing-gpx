@@ -1,5 +1,5 @@
 
-PROCESSING_CORE = /Applications/Processing.app/Contents/Resources/Java/core.jar
+PROCESSING_CORE = deps/core.jar
 
 SRC_FILES = \
 	GPX.java \
